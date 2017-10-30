@@ -9,4 +9,3 @@ gem 'rubocop', require: false
 gem 'rubocop-rspec', require: false
 
 gem 'byebug', require: false
-

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    etda_utilities (0.1.0)
+    etda_utilities (0.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -54,4 +54,4 @@ DEPENDENCIES
   rubocop-rspec
 
 BUNDLED WITH
-   1.16.0.pre.3
+   1.16.0
