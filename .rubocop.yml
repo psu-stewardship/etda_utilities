@@ -1,8 +1,9 @@
+inherit_from: .rubocop_todo.yml
+
 require: rubocop-rspec
 
-AllCops:
-  RunRailsCops: true
-  DisplayCopNames: true
+Rails:
+  Enabled: true
   Include:
     - '**/Rakefile'
     - '**/config.ru'
@@ -51,10 +52,10 @@ Metrics/PerceivedComplexity:
     - 'app/presenters/admin/submissions_index_view.rb'
     - 'app/models/ldap_university_directory.rb'
 
-Style/MultilineBlockLayout:
+Layout/MultilineBlockLayout:
   Exclude:
 
-Style/IndentationConsistency:
+Layout/IndentationConsistency:
   EnforcedStyle: rails
 
 Style/CollectionMethods:
@@ -90,7 +91,7 @@ Style/ClassVars:
   Exclude:
     - 'spec/support/authentication.rb'
 
-Style/VariableName:
+Naming/VariableName:
   Exclude:
     - 'lib/share_notify/push_document.rb'
 
@@ -99,35 +100,32 @@ Style/BracesAroundHashParameters:
     - 'config/deploy.rb'
     - 'spec/component/models/solr_data_import_service_spec.rb'
 
-Style/SpaceInsideBlockBraces:
+Style/TernaryParentheses:
+  Exclude:
+    - 'lib/etda_utilities/etda_file_paths.rb'
+    
+Layout/SpaceInsideBlockBraces:
   Exclude:
     - 'spec/component/models/solr_data_import_service_spec.rb'
 
-Style/SpaceInsideHashLiteralBraces:
+Layout/SpaceInsideHashLiteralBraces:
   Exclude:
     - 'spec/component/models/solr_data_import_service_spec.rb'
 
-Style/AccessorMethodName:
+Naming/AccessorMethodName:
   Exclude:
-    - 'config/application.rb'
 
-Style/PredicateName:
+Naming/PredicateName:
   Exclude:
-    - 'app/validators/virus_free_validator.rb'
 
 Lint/HandleExceptions:
   Exclude:
-    - 'spec/component/models/legacy/importers/degree_importer_spec.rb'
 
 Rails/Date:
   Enabled: false
 
 Rails/Output:
   Exclude:
-    - 'config/deploy.rb'
-    - 'config/qa-grad.rb'
-    - 'config/qa-honors.rb'
-    - 'lib/devise/strategies/http_header_authenticatable.rb'
 
 Rails/TimeZone:
   Enabled: false
@@ -149,20 +147,7 @@ RSpec/InstanceVariable:
 
 RSpec/DescribeClass:
   Exclude:
-    - 'spec/integration/**/*'
-    - 'spec/views/**/*'
-    - 'spec.system/system_spec.rb'
-    - 'spec/component/models/legacy/**/*'
-    - 'spec/component/current_partner_spec.rb'
-    - 'spec/component/models/author_spec.rb'
-    - 'spec/component/models/committee_member_spec.rb'
-    - 'spec/component/models/committee_role_spec.rb'
-    - 'spec/component/models/degree_spec.rb'
-    - 'spec/component/models/degree_type_spec.rb'
-    - 'spec/component/models/final_submission_file_spec.rb'
-    - 'spec/component/models/format_review_file_spec.rb'
-    - 'spec/component/models/keyword_spec.rb'
-    - 'spec/component/models/program_spec.rb'
+
 
 
 RSpec/MultipleDescribes:
@@ -170,10 +155,6 @@ RSpec/MultipleDescribes:
 
 Style/BlockDelimiters:
   Exclude:
-    - 'config/deploy.rb'
 
-Style/FileName:
+Naming/FileName:
   Exclude:
-    - 'config/qa-grad.rb'
-    - 'config/qa-honors.rb'
-    - 'config/qa-milsch.rb'
