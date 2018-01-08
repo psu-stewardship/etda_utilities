@@ -1,0 +1,54 @@
+graduate:
+  access_level:
+    open_access: Open Access
+    open_access_attr:
+      description_html: Allows free worldwide access to the entire work beginning immediately after degree conferral. Appropriate for the majority of dissertation submissions in immediately fulfilling the requirement for making the work available to the public.
+      scope: released_for_publication
+    restricted_to_institution: 'Restricted (Penn State Only)'
+    restricted_to_institution_attr:
+      description_html: 'Access restricted to individuals having a valid Penn State Access Account, for a period of two years. Allows restricted access of the entire work beginning immediately after degree conferral. At the end of the two-year period, the status will automatically change to Open Access. <i>Intended for use by authors in cases where prior public release of the work may compromise its acceptance for publication.</i>'
+      scope: final_restricted_institution
+    restricted: 'Restricted'
+    restricted_attr:
+      description_html: 'Restricts the entire work for a period of two years, for patent and/or proprietary purposes. At the end of the two-year period, the status will automatically change to Open Access. Selection of this option requires that an invention disclosure (ID) be filed with the Office of Technology Management (OTM) prior to submission of the final thesis/dissertation, and confirmed by OTM.'
+      scope: final_withheld
+    no_access: ''
+    no_access_attr:
+      description_html: 'none'
+      scope: 'no_access'
+honors:
+  access_level:
+    open_access: Open Access
+    open_access_attr:
+      description_html: Allows for open access to the body of the thesis. Note:"Withheld" status must be arranged by contacting the Honors College Records Department.
+      scope: released_for_publication
+    restricted_to_institution: 'Restricted (Penn State Only)'
+    restricted_to_institution_attr:
+      description_html: 'Access restricted to individuals having a valid Penn State Access Account, for a period of two years. Allows restricted access of the entire work beginning immediately after degree conferral. At the end of the two-year period, the status will automatically change to Open Access. <i>Intended for use by authors in cases where prior public release of the work may compromise its acceptance for publication.</i>'
+      scope: final_restricted_institution
+    restricted: 'Restricted'
+    restricted_attr:
+      description_html: 'The option selected secures the body of the thesis for a period of two years. Selection of this option requires that an invention disclosure (ID) be filed with the Office of Technology Management (OTM) prior to submission of the final honors thesis and confirmed by OTM. At the end of the two-year period, the work will be released automatically for open access unless a written request is made to extend this option for an additional year. The written request for an extension should be sent 30 days prior to the end of the two-year period to the Honors College Records Department, 10 Schreyer Honors College, The Pennsylvania State University, University Park, PA 16802, or by e-mail to <a href="mailto:honorsthesis@psu.edu">honorsthesis@psu.edu</a>. Please note: No one will be able to view your work under this option.'
+      scope: final_withheld
+    no_access: ''
+    no_access_attr:
+      description_html: 'none'
+      scope: 'no_access'
+milsch:
+  access_level:
+     open_access: Open Access
+     open_access_attr:
+       description_html: 'Allows free worldwide access to the entire work beginning immediately after degree conferral.  Appropriate for the majority of theses submissions in immediately fulling the requirement for making the work available to the public.'
+       scope: released_for_publication
+     restricted_to_institution: 'Restricted (Penn State Only)'
+     restricted_to_institution_attr:
+       description_html: 'Access restricted to individuals having a valid Penn State Access Account, for a period of two years. Allows restricted access of the entire work beginning immediately after degree conferral. At the end of the two-year period, the status will automatically change to Open Access. <i>Intended for use by authors in cases where prior public release of the work may compromise its acceptance for publication.</i>'
+       scope: final_restricted_institution
+     restricted: Restricted
+     restricted_attr:
+       description_html: 'The option selected secures the body of the thesis for a period of two years. Selection of this option requires that an invention disclosure (ID) be filed with the Office of Technology Management (OTM) prior to submission of the final thesis and confirmed by OTM. At the end of the two-year period, the work will be released automatically for open access unless a written request is made to extend this option for an additional year. The written request for an extension should be sent to Millennium Scholars Program, 130 Ritenour Building, University Park, PA 16802 or by email to <a href="mailto:millennium@psu.edu">millennium@psu.edu</a>.  Please note: No one will be able to view your work under this option.'
+       scope: final_withheld
+     no_access: ''
+     no_access_attr:
+       description_html: 'none'
+       scope: 'no_access'

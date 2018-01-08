@@ -1,0 +1,179 @@
+require: rubocop-rspec
+
+AllCops:
+  RunRailsCops: true
+  DisplayCopNames: true
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'script/**/*'
+    - 'vendor/**/*'
+    - 'config/deploy/**/*'
+    - 'features/**/*'
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Exclude:
+    - 'app/controllers/author/submissions_controller.rb'
+    - 'app/controllers/ldap_lookup_controller.rb'
+    - 'app/models/author.rb'
+    - 'app/models/ldap_result.rb'
+    - 'app/controllers/admin/submissions_controller.rb'
+    - 'app/controllers/catalog_controller.rb'
+    - 'app/models/legacy/main_submission.rb'
+    - 'app/models/submission.rb'
+    - 'app/presenters/admin/submissions_dashboard_view.rb'
+    - 'app/presenters/admin/submissions_index_view.rb'
+    - 'app/presenters/submission_view.rb'
+    - 'app/models/ldap_university_directory.rb'
+
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'app/models/legacy/main_submission.rb'
+    - 'app/presenters/admin/submission_form_view.rb'
+    - 'app/presenters/admin/submissions_index_view.rb'
+    - 'app/models/ldap_university_directory.rb'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'app/models/legacy/main_submission.rb'
+    - 'app/presenters/admin/submission_form_view.rb'
+    - 'app/presenters/admin/submissions_index_view.rb'
+    - 'app/models/ldap_university_directory.rb'
+
+Style/MultilineBlockLayout:
+  Exclude:
+
+Style/IndentationConsistency:
+  EnforcedStyle: rails
+
+Style/CollectionMethods:
+  PreferredMethods:
+    collect: 'map'
+    collect!: 'map!'
+    inject: 'reduce'
+    detect: 'find'
+    find_all: 'select'
+
+Style/WordArray:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Style/SignalException:
+  Enabled: false
+
+Style/ClassVars:
+  Exclude:
+    - 'spec/support/authentication.rb'
+
+Style/VariableName:
+  Exclude:
+    - 'lib/share_notify/push_document.rb'
+
+Style/BracesAroundHashParameters:
+  Exclude:
+    - 'config/deploy.rb'
+    - 'spec/component/models/solr_data_import_service_spec.rb'
+
+Style/SpaceInsideBlockBraces:
+  Exclude:
+    - 'spec/component/models/solr_data_import_service_spec.rb'
+
+Style/SpaceInsideHashLiteralBraces:
+  Exclude:
+    - 'spec/component/models/solr_data_import_service_spec.rb'
+
+Style/AccessorMethodName:
+  Exclude:
+    - 'config/application.rb'
+
+Style/PredicateName:
+  Exclude:
+    - 'app/validators/virus_free_validator.rb'
+
+Lint/HandleExceptions:
+  Exclude:
+    - 'spec/component/models/legacy/importers/degree_importer_spec.rb'
+
+Rails/Date:
+  Enabled: false
+
+Rails/Output:
+  Exclude:
+    - 'config/deploy.rb'
+    - 'config/qa-grad.rb'
+    - 'config/qa-honors.rb'
+    - 'lib/devise/strategies/http_header_authenticatable.rb'
+
+Rails/TimeZone:
+  Enabled: false
+
+RSpec/ExampleWording:
+  CustomTransform:
+    be: is
+    have: has
+    not: does not
+    NOT: does NOT
+  IgnoredWords:
+    - only
+
+RSpec/FilePath:
+  Enabled: false
+
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/integration/**/*'
+    - 'spec/views/**/*'
+    - 'spec.system/system_spec.rb'
+    - 'spec/component/models/legacy/**/*'
+    - 'spec/component/current_partner_spec.rb'
+    - 'spec/component/models/author_spec.rb'
+    - 'spec/component/models/committee_member_spec.rb'
+    - 'spec/component/models/committee_role_spec.rb'
+    - 'spec/component/models/degree_spec.rb'
+    - 'spec/component/models/degree_type_spec.rb'
+    - 'spec/component/models/final_submission_file_spec.rb'
+    - 'spec/component/models/format_review_file_spec.rb'
+    - 'spec/component/models/keyword_spec.rb'
+    - 'spec/component/models/program_spec.rb'
+
+
+RSpec/MultipleDescribes:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'config/deploy.rb'
+
+Style/FileName:
+  Exclude:
+    - 'config/qa-grad.rb'
+    - 'config/qa-honors.rb'
+    - 'config/qa-milsch.rb'
