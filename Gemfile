@@ -9,3 +9,5 @@ gem 'rubocop', require: false
 gem 'rubocop-rspec', require: false
 
 gem 'byebug', require: false
+
+gem 'bundle-audit', require: false
