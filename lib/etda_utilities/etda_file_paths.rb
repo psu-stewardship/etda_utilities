@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EtdaUtilities
   class EtdaFilePaths
     RESTRICTED_DIR = 'restricted'
@@ -24,27 +26,27 @@ module EtdaUtilities
     end
 
     def workflow_upload_final_files_path
-      "#{workflow_base_path}" + "#{this_host}" + 'final-submission-files'
+      workflow_base_path.to_s + this_host.to_s + 'final-submission-files'
     end
 
     def workflow_upload_format_review_path
-      "#{workflow_base_path}" + "#{this_host}" + 'format-review-files'
+      workflow_base_path.to_s + this_host.to_s + 'format-review-files'
     end
 
     def workflow_restricted_institution
-      "#{workflow_base_path}" + "#{this_host}" + RESTRICTED_INSTITUTION_DIR
+      workflow_base_path.to_s + this_host.to_s + RESTRICTED_INSTITUTION_DIR
     end
 
     def workflow_restricted
-      "#{workflow_base_path}" + "#{this_host}" + RESTRICTED_DIR
+      workflow_base_path.to_s + this_host.to_s + RESTRICTED_DIR
     end
 
     def explore_open
-      "#{explore_base_path}" + "#{this_host}" + OPEN_DIR
+      explore_base_path.to_s + this_host.to_s + OPEN_DIR
     end
 
     def explore_psu_only
-      "#{explore_base_path}" + "#{this_host}" + RESTRICTED_INSTITUTION_DIR
+      explore_base_path.to_s + this_host.to_s + RESTRICTED_INSTITUTION_DIR
     end
   end
 end

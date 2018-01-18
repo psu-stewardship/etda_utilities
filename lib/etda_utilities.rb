@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'etda_utilities/version'
 
 module EtdaUtilities

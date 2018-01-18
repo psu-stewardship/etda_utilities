@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
   describe 'EtdaFilePaths' do
     context '#base_path' do

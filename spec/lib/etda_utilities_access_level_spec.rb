@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe EtdaUtilities::AccessLevel, type: :model do
   describe 'AccessLevel' do
     context '#ACCESS_LEVEL_KEYS' do

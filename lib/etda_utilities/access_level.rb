@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module EtdaUtilities
   file_path = File.join(File.dirname(__FILE__), 'access_levels_for_partners.yml')
-  CURRENT_PARTNER_ACCESS_LEVELS = YAML.load_file("#{file_path}")[EtdaUtilities::Partner.current.id]
+  CURRENT_PARTNER_ACCESS_LEVELS = YAML.load_file(file_path.to_s)[EtdaUtilities::Partner.current.id]
 
   class AccessLevel
     attr_accessor :attributes
@@ -8,12 +10,12 @@ module EtdaUtilities
     # *** IMPORTANT NOTE ***
     # The order of the keys in this array matter and they should go from least restrictive to most restrictive
     # This is used in the comparison operation (<=>) below
-    ACCESS_LEVEL_KEYS = ['open_access', 'restricted_to_institution', 'restricted'] # , '']
+    ACCESS_LEVEL_KEYS = ['open_access', 'restricted_to_institution', 'restricted'].freeze # , '']
 
     # create instances of each type that can be used
     # OPEN_ACCESS, RESTRICTED, and RESTRICTED_TO_INSTITUTION (graduate only)
     class << self
-      (ACCESS_LEVEL_KEYS).each do |level|
+      ACCESS_LEVEL_KEYS.each do |level|
         define_method(level.upcase) do
           new(level)
         end
@@ -41,9 +43,9 @@ module EtdaUtilities
 
     def initialize(level)
       # super(submission_attributes, level)
-      @attributes = self.class.partner_access_levels['access_level']["#{level}"]
+      @attributes = self.class.partner_access_levels['access_level'][level.to_s]
       @current_access_level = level
-      level
+      @current_access_level
     end
 
     attr_reader :current_access_level
@@ -100,11 +102,8 @@ module EtdaUtilities
         super
       rescue NoMethodError
         name = sym.to_s.sub('?', '')
-        if ACCESS_LEVEL_KEYS.include?(name)
-          return false
-        else
-          raise
-        end
+        return false if ACCESS_LEVEL_KEYS.include?(name)
+        raise
       end
   end
 end

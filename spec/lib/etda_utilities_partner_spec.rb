@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe EtdaUtilities::Partner, type: :model do
   describe 'current_partner.id' do
     context "when ENV['PARTNER'] is graduate" do
@@ -10,9 +12,9 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
         expect(described_class.current.id).not_to eql('milsch')
       end
       it 'responds to graduate?' do
-        expect(described_class.current.graduate?).to be_truthy
-        expect(described_class.current.honors?).to be_falsey
-        expect(described_class.current.milsch?).to be_falsey
+        expect(described_class.current).to be_graduate
+        expect(described_class.current).not_to be_honors
+        expect(described_class.current).not_to be_milsch
       end
     end
     context "when ENV['PARTNER'] is honors" do
@@ -25,9 +27,9 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
         expect(described_class.current.id).not_to eql('milsch')
       end
       it 'responds to honors?' do
-        expect(described_class.current.honors?).to be_truthy
-        expect(described_class.current.graduate?).to be_falsey
-        expect(described_class.current.milsch?).to be_falsey
+        expect(described_class.current).to be_honors
+        expect(described_class.current).not_to be_graduate
+        expect(described_class.current).not_to be_milsch
       end
     end
     context "when ENV['PARTNER'] is milsch" do
@@ -40,9 +42,9 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
         expect(described_class.current.id).not_to eql('honors')
       end
       it 'responds to milsch?' do
-        expect(described_class.current.milsch?).to be_truthy
-        expect(described_class.current.graduate?).to be_falsey
-        expect(described_class.current.honors?).to be_falsey
+        expect(described_class.current).to be_milsch
+        expect(described_class.current).not_to be_graduate
+        expect(described_class.current).not_to be_honors
       end
     end
     context "when ENV['PARTNER'] is not a valid partner" do
