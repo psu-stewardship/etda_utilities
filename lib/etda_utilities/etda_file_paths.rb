@@ -7,46 +7,33 @@ module EtdaUtilities
     OPEN_DIR = 'open'
 
     def workflow_base_path
-      'tmp/'
-      # override method in application adding following line (do not include 'tmp/')
-      # WORKFLOW_BASE_PATH
+      path = (defined? EXPLORE_BASE_PATH) ? EXPLORE_BASE_PATH : 'tmp'
+      path + '/'
     end
 
     def explore_base_path
-      'tmp/'
-      # override method in application by adding the following line (do not include 'tmp/')
-      # EXPLORE_BASE_PATH
-    end
-
-    def this_host
-      'localhost/'
-
-      # override method in application with following line (do not include 'localhost/'):
-      # Rails.application.secrets.webaccess[:path] + '/'
+      path = (defined? EXPLORE_BASE_PATH) ? EXPLORE_BASE_PATH : 'tmp'
+      path + '/'
     end
 
     def workflow_upload_final_files_path
-      workflow_base_path.to_s + this_host.to_s + 'final-submission-files'
+      workflow_base_path + 'final-submission-files'
     end
 
     def workflow_upload_format_review_path
-      workflow_base_path.to_s + this_host.to_s + 'format-review-files'
-    end
-
-    def workflow_restricted_institution
-      workflow_base_path.to_s + this_host.to_s + RESTRICTED_INSTITUTION_DIR
+      workflow_base_path + 'format-review-files'
     end
 
     def workflow_restricted
-      workflow_base_path.to_s + this_host.to_s + RESTRICTED_DIR
+      workflow_base_path + RESTRICTED_DIR
     end
 
     def explore_open
-      explore_base_path.to_s + this_host.to_s + OPEN_DIR
+      explore_base_path + OPEN_DIR
     end
 
     def explore_psu_only
-      explore_base_path.to_s + this_host.to_s + RESTRICTED_INSTITUTION_DIR
+      explore_base_path + RESTRICTED_INSTITUTION_DIR
     end
   end
 end

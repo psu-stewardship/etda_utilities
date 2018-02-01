@@ -100,6 +100,10 @@ Style/BracesAroundHashParameters:
     - 'config/deploy.rb'
     - 'spec/component/models/solr_data_import_service_spec.rb'
 
+Style/TernaryParentheses:
+  Exclude:
+    - 'lib/etda_utilities/etda_file_paths.rb'
+    
 Layout/SpaceInsideBlockBraces:
   Exclude:
     - 'spec/component/models/solr_data_import_service_spec.rb'
