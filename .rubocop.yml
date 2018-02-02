@@ -148,7 +148,9 @@ RSpec/InstanceVariable:
 RSpec/DescribeClass:
   Exclude:
 
-
+Style/NumericLiterals:
+  Exclude:
+    - 'spec/lib/etda_utilities_etda_file_paths_spec.rb'
 
 RSpec/MultipleDescribes:
   Enabled: false

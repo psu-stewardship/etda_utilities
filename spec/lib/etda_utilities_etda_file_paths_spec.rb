@@ -31,5 +31,19 @@ RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
         expect(subject.explore_open).to eql('tmp/open')
       end
     end
+    context '#detailed_file_path' do
+      it 'uses database record id to build the file path' do
+        id = 2
+        expect(subject.detailed_file_path(id)).to eq('02/2')
+        id = 11
+        expect(subject.detailed_file_path(id)).to eq('11/11')
+      end
+      it 'works for bigger numbers' do
+        id = 345
+        expect(subject.detailed_file_path(id)).to eq('45/345')
+        id = 19857
+        expect(subject.detailed_file_path(id)).to eq('57/19857')
+      end
+    end
   end
 end
