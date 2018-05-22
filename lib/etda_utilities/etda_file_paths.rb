@@ -7,11 +7,11 @@ module EtdaUtilities
     OPEN_DIR = 'open_access'
 
     def workflow_base_path
-      path = (defined? EXPLORE_BASE_PATH) ? EXPLORE_BASE_PATH : 'tmp/'
+      (defined? EXPLORE_BASE_PATH) ? EXPLORE_BASE_PATH : 'tmp/'
     end
 
     def explore_base_path
-      path = (defined? EXPLORE_BASE_PATH) ? EXPLORE_BASE_PATH : 'tmp/'
+      (defined? EXPLORE_BASE_PATH) ? EXPLORE_BASE_PATH : 'tmp/'
     end
 
     def workflow_upload_final_files_path
