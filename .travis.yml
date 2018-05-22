@@ -1,12 +1,17 @@
-sudo: false
 language: ruby
-rvm:
-  - 2.4.1
+cache: bundler
+sudo: required
+#rvm:
+#- 2.4.3
+jdk:
+- oraclejdk8
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-before_install: gem install bundler -v 1.16.0.pre.2
+  - JS=truesudo: false
 script:
+- gem install bundler
+- gem install rspec
 - bundle exec rubocop
 - bundle exec rspec 
 notifications:
@@ -18,3 +23,6 @@ notifications:
   irc:
     channels: 
     template: 
+
+
+

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    etda_utilities (0.5.1)
+    etda_utilities (0.5.2)
 
 GEM
   remote: https://rubygems.org/
