@@ -45,5 +45,34 @@ RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
         expect(subject.detailed_file_path(id)).to eq('57/19857/')
       end
     end
+    context '#explore_download_file_path' do
+      file_id = 345
+      filename = 'myfile.pdf'
+      it 'is nil for restricted files' do
+        access_level = 'restricted'
+        expect(subject.explore_download_file_path(file_id, access_level, filename)).to be_nil
+      end
+      it 'returns a path for restricted_to_institution records' do
+        access_level = 'restricted_to_institution'
+        expect(subject.explore_download_file_path(file_id, access_level, filename)).to eq('tmp/restricted_institution/45/345/myfile.pdf')
+      end
+      it 'returns a path for open_access records' do
+        access_level = 'open_access'
+        expect(subject.explore_download_file_path(file_id, access_level, filename)).to eq('tmp/open_access/45/345/myfile.pdf')
+      end
+      it 'returns nil for unrecognized access levels' do
+        access_level = 'iambogus'
+        expect(subject.explore_download_file_path(file_id, access_level, filename)).to be_nil
+      end
+      it 'returns nil if access_level is missing' do
+        access_level = ''
+        expect(subject.explore_download_file_path(file_id, access_level, filename)).to be_nil
+      end
+      it 'returns nil if file_id is missing' do
+        access_level = 'open_access'
+        file_id = nil
+        expect(subject.explore_download_file_path(file_id, access_level, filename)).to be_nil
+      end
+    end
   end
 end

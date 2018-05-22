@@ -7,13 +7,11 @@ module EtdaUtilities
     OPEN_DIR = 'open_access'
 
     def workflow_base_path
-      path = (defined? EXPLORE_BASE_PATH) ? EXPLORE_BASE_PATH : 'tmp'
-      path + '/'
+      path = (defined? EXPLORE_BASE_PATH) ? EXPLORE_BASE_PATH : 'tmp/'
     end
 
     def explore_base_path
-      path = (defined? EXPLORE_BASE_PATH) ? EXPLORE_BASE_PATH : 'tmp'
-      path + '/'
+      path = (defined? EXPLORE_BASE_PATH) ? EXPLORE_BASE_PATH : 'tmp/'
     end
 
     def workflow_upload_final_files_path
@@ -42,13 +40,11 @@ module EtdaUtilities
       str1 + '/' + str2 + '/'
     end
 
-    def published_file_path(file_id)
-      file = FinalSubmissionFile.find(file_id)
-      submission = Submission.find(file.submission_id)
-      return nil if submission.access_level.restricted?
-      return nil unless submission.status_behavior.released_for_publication?
-      return explore_open + detailed_file_path(file.id) + file.asset if submission.access_level.open_access?
-      return explore_psu_only + detailed_file_path(file.id) + file.asset if submission.access.restricted_to_institution?
+    def explore_download_file_path(file_id, access_level, filename)
+      return nil if file_id.nil? || access_level.empty?
+      return nil if access_level == 'restricted'
+      return explore_open + detailed_file_path(file_id) + filename if access_level == 'open_access'
+      return explore_psu_only + detailed_file_path(file_id) + filename if access_level == 'restricted_to_institution'
       nil
     end
   end
