@@ -134,6 +134,9 @@ Rails/Output:
 Rails/TimeZone:
   Enabled: false
 
+RSpec/ExampleLength:
+  Enabled: false
+
 RSpec/ExampleWording:
   CustomTransform:
     be: is
@@ -158,6 +161,10 @@ Style/NumericLiterals:
 
 RSpec/MultipleDescribes:
   Enabled: false
+
+RSpec/MultipleExpectations:
+  Exclude:
+  - 'spec/lib/etda_utilities_access_level_spec.rb'
 
 Style/BlockDelimiters:
   Exclude:

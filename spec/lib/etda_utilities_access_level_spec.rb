@@ -27,5 +27,25 @@ RSpec.describe EtdaUtilities::AccessLevel, type: :model do
         expect(described_class.valid_levels).not_to match_array(described_class.paper_access_level_keys)
       end
     end
+    context 'given an invalid level' do
+      it 'returns nil values' do
+        bad_level = described_class.new('bogusvalue')
+        expect(bad_level.attributes).to be_nil
+        expect(bad_level.current_access_level).to be_nil
+      end
+    end
+    context 'given valid levels' do
+      it 'returns current_access_level and attribute' do
+        open_access = described_class.new('open_access')
+        expect(open_access.attributes).to eq('Open Access')
+        expect(open_access.current_access_level).to eq('open_access')
+        restricted_to_institution = described_class.new('restricted_to_institution')
+        expect(restricted_to_institution.attributes).to eq('Restricted (Penn State Only)')
+        expect(restricted_to_institution.current_access_level).to eq('restricted_to_institution')
+        restricted = described_class.new('restricted')
+        expect(restricted.attributes).to eq('Restricted')
+        expect(restricted.current_access_level).to eq('restricted')
+      end
+    end
   end
 end

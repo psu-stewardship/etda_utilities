@@ -43,9 +43,8 @@ module EtdaUtilities
 
     def initialize(level)
       # super(submission_attributes, level)
-      @attributes = self.class.partner_access_levels['access_level'][level.to_s]
-      @current_access_level = level
-      @current_access_level
+      @attributes = self.class.partner_access_levels['access_level'][level.to_s] || nil
+      @current_access_level = verify_access_level(level)
     end
 
     attr_reader :current_access_level
@@ -57,26 +56,19 @@ module EtdaUtilities
     end
 
     def scope
-      # @attributes["#{current_access_level}_attr"]['scope'] || 'released_for_publication'
-      # I18n.t("#{i18n_attr_handle}.scope", default: 'released_for_publication')
       self.class.partner_access_levels['access_level']["#{current_access_level}_attr"]['scope'] || 'released_for_publication'
     end
 
     def label
-      # @attributes["#{current_access_level}"]
-      # I18n.t("#{i18n_handle}", default: '')
       self.class.partner_access_levels['access_level'][current_access_level] || ''
     end
 
     def description
-      # @attributes["#{current_access_level}_attr"]['description_html']
-      # I18n.t("#{i18n_attr_handle}.description_html", default: '').html_safe
       self.class.partner_access_levels['access_level']["#{current_access_level}_attr"]['description_html']
     end
 
     # define the integer value of the item as the index in the access other keys array
     def to_i
-      # self.class.partner_access_levels['access_level'][current_access_level]['enum_val'].to_i
       self.class.valid_levels.find_index current_access_level
     end
 
@@ -87,16 +79,12 @@ module EtdaUtilities
       end
 
       def i18n_handle
-        # #EtdaUtilities::AccessLevel.partner_access_levels['access_level']
         self.class.partner_access_levels['access_level']
-        # self.class.partner_access_levels['access_level']["#{self}"]
       end
 
-      # def submission_attributes
-      #    @attributes ||= self.class.partner_access_levels['access_level']    #[level_id]
-      # #   # @attributes ||= Submission.enumerized_attributes[:access_level]
-      # #   # enumerize :access_level, in: ::AccessLevel.valid_levels, default: '', i18n_scope: "#{current_partner.id}.access_level"
-      # end
+      def verify_access_level(level)
+        EtdaUtilities::AccessLevel::ACCESS_LEVEL_KEYS.include?(level) ? level : nil
+      end
 
       def method_missing(sym, *args, &block)
         super
