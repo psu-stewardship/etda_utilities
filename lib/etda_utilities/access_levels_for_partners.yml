@@ -14,7 +14,7 @@ graduate:
       scope: final_withheld
     no_access: ''
     no_access_attr:
-      description_html: 'none'
+      description_html: ''
       scope: 'no_access'
 honors:
   access_level:
@@ -32,7 +32,7 @@ honors:
       scope: final_withheld
     no_access: ''
     no_access_attr:
-      description_html: 'none'
+      description_html: ''
       scope: 'no_access'
 milsch:
   access_level:
@@ -50,5 +50,5 @@ milsch:
        scope: final_withheld
      no_access: ''
      no_access_attr:
-       description_html: 'none'
+       description_html: ''
        scope: 'no_access'

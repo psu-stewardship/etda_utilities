@@ -4,7 +4,7 @@ RSpec.describe EtdaUtilities::AccessLevel, type: :model do
   describe 'AccessLevel' do
     context '#ACCESS_LEVEL_KEYS' do
       it 'constant containing all access levels' do
-        expect(described_class::ACCESS_LEVEL_KEYS).to match_array(['open_access', 'restricted_to_institution', 'restricted'])
+        expect(described_class::ACCESS_LEVEL_KEYS).to match_array(['open_access', 'restricted_to_institution', 'restricted', ''])
       end
     end
     context '#paper_access_level_keys' do
@@ -23,15 +23,14 @@ RSpec.describe EtdaUtilities::AccessLevel, type: :model do
 
     context '#valid_levels' do
       it 'returns access_levels including no level' do
-        expect(described_class.valid_levels).to match_array(described_class.paper_access_level_keys + [''])
-        expect(described_class.valid_levels).not_to match_array(described_class.paper_access_level_keys)
+        expect(described_class.valid_levels).to match_array(described_class.paper_access_level_keys)
       end
     end
     context 'given an invalid level' do
       it 'returns nil values' do
         bad_level = described_class.new('bogusvalue')
         expect(bad_level.attributes).to be_nil
-        expect(bad_level.current_access_level).to be_nil
+        expect(bad_level.current_access_level).to eq('')
       end
     end
     context 'given valid levels' do
@@ -45,6 +44,9 @@ RSpec.describe EtdaUtilities::AccessLevel, type: :model do
         restricted = described_class.new('restricted')
         expect(restricted.attributes).to eq('Restricted')
         expect(restricted.current_access_level).to eq('restricted')
+        no_access = described_class.new('')
+        expect(no_access.attributes).to be_nil
+        expect(no_access.current_access_level).to eq('')
       end
     end
   end

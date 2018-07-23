@@ -10,12 +10,13 @@ module EtdaUtilities
     # *** IMPORTANT NOTE ***
     # The order of the keys in this array matter and they should go from least restrictive to most restrictive
     # This is used in the comparison operation (<=>) below
-    ACCESS_LEVEL_KEYS = ['open_access', 'restricted_to_institution', 'restricted'].freeze # , '']
+    ACCESS_LEVEL_KEYS = ['open_access', 'restricted_to_institution', 'restricted', ''].freeze
 
     # create instances of each type that can be used
     # OPEN_ACCESS, RESTRICTED, and RESTRICTED_TO_INSTITUTION (graduate only)
     class << self
       ACCESS_LEVEL_KEYS.each do |level|
+        level = 'NO_ACCESS' if level == '' || level.nil?
         define_method(level.upcase) do
           new(level)
         end
@@ -31,7 +32,7 @@ module EtdaUtilities
     end
 
     def self.valid_levels
-      paper_access_level_keys + ['']
+      paper_access_level_keys #  + ['']
     end
 
     def self.paper_access_levels
@@ -43,7 +44,7 @@ module EtdaUtilities
 
     def initialize(level)
       # super(submission_attributes, level)
-      @attributes = self.class.partner_access_levels['access_level'][level.to_s] || nil
+      @attributes = self.class.partner_access_levels['access_level'][level.to_s] # || 'NO_ACCESS'
       @current_access_level = verify_access_level(level)
     end
 
@@ -64,6 +65,7 @@ module EtdaUtilities
     end
 
     def description
+      return '' if current_access_level == ''
       self.class.partner_access_levels['access_level']["#{current_access_level}_attr"]['description_html']
     end
 
@@ -83,7 +85,7 @@ module EtdaUtilities
       end
 
       def verify_access_level(level)
-        EtdaUtilities::AccessLevel::ACCESS_LEVEL_KEYS.include?(level) ? level : nil
+        EtdaUtilities::AccessLevel::ACCESS_LEVEL_KEYS.include?(level) ? level : ''
       end
 
       def method_missing(sym, *args, &block)
