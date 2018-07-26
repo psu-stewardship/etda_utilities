@@ -13,6 +13,7 @@ Rails:
     - 'vendor/**/*'
     - 'config/deploy/**/*'
     - 'features/**/*'
+    - 'etda_utilities.gemspec'
 
 Metrics/LineLength:
   Enabled: false
