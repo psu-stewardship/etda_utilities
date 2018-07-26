@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'A gem containing common fuctions for the ETDA applications.'
   spec.description   = 'Contains Partner, .., ..., etc. '
-  spec.homepage      =  etda.libraries.psu.edu
+  spec.homepage      =  'https://etda.libraries.psu.edu'
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
