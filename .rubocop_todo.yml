@@ -29,7 +29,7 @@ Layout/IndentationConsistency:
 Layout/SpaceAroundOperators:
   Exclude:
 #    - 'etda_utilities-0.3.0/etda_utilities.gemspec'
-#    - 'etda_utilities.gemspec'
+    - 'etda_utilities.gemspec'
 
 # Offense count: 2
 # Cop supports --auto-correct.
