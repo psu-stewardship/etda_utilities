@@ -7,7 +7,7 @@ module EtdaUtilities
     OPEN_DIR = 'open_access'
 
     def workflow_base_path
-      (defined? EXPLORE_BASE_PATH) ? EXPLORE_BASE_PATH : 'tmp/'
+      (defined? WORKFLOW_BASE_PATH) ? WORKFLOW_BASE_PATH : 'tmp/'
     end
 
     def explore_base_path
