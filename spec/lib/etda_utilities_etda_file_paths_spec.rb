@@ -10,6 +10,7 @@ RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
         expect(described_class.new.explore_base_path).to eql('tmp/')
       end
     end
+
     context 'workflow uploads' do
       it 'returns final-files path' do
         expect(subject.workflow_upload_final_files_path).to eql('tmp/final_submission_files/')
@@ -18,11 +19,13 @@ RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
         expect(subject.workflow_upload_format_review_path).to eql('tmp/format_review_files/')
       end
     end
+
     context '#workflow_restricted' do
       it 'returns path of published restricted files' do
         expect(subject.workflow_restricted).to eql('tmp/restricted/')
       end
     end
+
     context 'explore published paths' do
       it 'returns path of restricted to institution files' do
         expect(subject.explore_psu_only).to eql('tmp/restricted_institution/')
@@ -31,6 +34,7 @@ RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
         expect(subject.explore_open).to eql('tmp/open_access/')
       end
     end
+
     context '#detailed_file_path' do
       it 'uses database record id to build the file path' do
         id = 2
@@ -45,6 +49,7 @@ RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
         expect(subject.detailed_file_path(id)).to eq('57/19857/')
       end
     end
+
     context '#explore_download_file_path' do
       file_id = 345
       filename = 'myfile.pdf'

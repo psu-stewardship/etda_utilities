@@ -7,11 +7,13 @@ RSpec.describe EtdaUtilities::AccessLevel, type: :model do
         expect(described_class::ACCESS_LEVEL_KEYS).to match_array(['open_access', 'restricted_to_institution', 'restricted', ''])
       end
     end
+
     context '#paper_access_level_keys' do
       it '#paper_access_level_keys returns an array of access_levels' do
         expect(described_class::ACCESS_LEVEL_KEYS).to match_array(described_class.paper_access_level_keys)
       end
     end
+
     context '#partner_access_level' do
       it 'returns access level information from a yml file' do
         yml_level = described_class.partner_access_levels['access_level']
@@ -26,6 +28,7 @@ RSpec.describe EtdaUtilities::AccessLevel, type: :model do
         expect(described_class.valid_levels).to match_array(described_class.paper_access_level_keys)
       end
     end
+
     context 'given an invalid level' do
       it 'returns nil values' do
         bad_level = described_class.new('bogusvalue')
@@ -33,6 +36,7 @@ RSpec.describe EtdaUtilities::AccessLevel, type: :model do
         expect(bad_level.current_access_level).to eq('')
       end
     end
+
     context 'given valid levels' do
       it 'returns current_access_level and attribute' do
         open_access = described_class.new('open_access')

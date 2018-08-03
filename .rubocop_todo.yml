@@ -136,8 +136,8 @@ Style/IfUnlessModifier:
     - 'etda_utilities-0.3.0/lib/etda_utilities/partner.rb'
     - 'lib/etda_utilities/partner.rb'
 
+Style/MissingRespondToMissing:
 # Offense count: 2
-Style/MethodMissing:
   Exclude:
     - 'etda_utilities-0.3.0/lib/etda_utilities/access_level.rb'
     - 'lib/etda_utilities/access_level.rb'
