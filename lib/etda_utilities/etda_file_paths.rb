@@ -35,7 +35,7 @@ module EtdaUtilities
     end
 
     def detailed_file_path(file_id)
-      str1 = format("%02d", ((file_id || 0) % 100))
+      str1 = format("%02d", ((file_id.to_i || 0) % 100))
       str2 = file_id.to_s
       str1 + '/' + str2 + '/'
     end
