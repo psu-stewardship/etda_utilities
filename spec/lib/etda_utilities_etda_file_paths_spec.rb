@@ -48,6 +48,10 @@ RSpec.describe EtdaUtilities::EtdaFilePaths, type: :model do
         id = 19857
         expect(subject.detailed_file_path(id)).to eq('57/19857/')
       end
+      it 'works for a submitted string' do
+        id = "345"
+        expect(subject.detailed_file_path(id)).to eq('45/345/')
+      end
     end
 
     context '#explore_download_file_path' do
