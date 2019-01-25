@@ -93,6 +93,7 @@ RSpec/MultipleExpectations:
 RSpec/NamedSubject:
   Exclude:
     - 'spec/lib/etda_utilities_etda_file_paths_spec.rb'
+    - 'spec/lib/etda_utilities_hosts_spec.rb'
 
 # Offense count: 9
 # Configuration parameters: Strict, EnforcedStyle.
