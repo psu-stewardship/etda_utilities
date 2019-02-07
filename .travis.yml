@@ -8,7 +8,13 @@ jdk:
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-  - JS=truesudo: false
+  - JS=true
+before_install:
+  - "gem --version"
+  - "gem update --system"
+  - "gem --version"
+  - "gem install bundler"
+  - "gem update bundler"
 script:
 - gem install bundler
 - gem install rspec
@@ -17,7 +23,7 @@ script:
 notifications:
   email:
     recipients:
-    - jxb13@psu.edu
+    - amg32@psu.edu
     on_success: change
     on_failure: always
   irc:
