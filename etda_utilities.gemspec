@@ -7,8 +7,8 @@ require "etda_utilities/version"
 Gem::Specification.new do |spec|
   spec.name          = "etda_utilities"
   spec.version       = EtdaUtilities::VERSION
-  spec.authors       = ["jxb13@psu.edu"]
-  spec.email         = ["jxb13@psu.edu"]
+  spec.authors       = ["ajk5603@psu.edu"]
+  spec.email         = ["ajk5603@psu.edu"]
 
   spec.summary       = 'A gem containing common fuctions for the ETDA applications.'
   spec.description   = 'Contains Partner, .., ..., etc. '
