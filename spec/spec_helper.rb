@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+ENV['PARTNER'] = ENV.fetch('PARTNER', 'graduate')
 
 require "bundler/setup"
 require "etda_utilities"
