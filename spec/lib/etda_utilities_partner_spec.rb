@@ -68,8 +68,8 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
         ENV.delete('PARTNER')
       end
 
-      it 'defaults to graduate' do
-        expect(described_class.current.id).to eql('graduate')
+      it 'reports an error' do
+        expect { described_class.current.id }.to raise_error(KeyError)
       end
     end
   end

@@ -5,7 +5,7 @@ module EtdaUtilities
     VALID_IDS = %w[graduate honors milsch].freeze
 
     def self.current
-      new(ENV.fetch('PARTNER', 'graduate'))
+      new(ENV.fetch('PARTNER'))
     end
 
     def initialize(id)
