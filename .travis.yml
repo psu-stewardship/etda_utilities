@@ -23,7 +23,7 @@ script:
 notifications:
   email:
     recipients:
-    - amg32@psu.edu, ajk5603@psu.edu
+      secure: "l84DQVl48Z4/O/H/zAHFL6GmnBe5BHGQZj2rBv2/X7j1QfOOQEb3h0ZVk5+RdlGLvNjgc8va0sI6JJWa8QuQa68/T6RfcBoZHb90pKOIRoZOVjiwwUYC+mdRMv5s0vemJ2VxreAoJl5JmJ6TLvy5w52G7mmMOm+1VuYPv3MuvZ3nbFwm15qz6LxiRhyUJhaXcZhi1emZYsRd+qazQ9HlkKWMoCz68gi8zWVULnRbZSIHIEj4GV5bn9L67u+699LgIjKrT1Xeh0wnb/wtPIrgwheSksgqYcaRRkBmkaajjss2Zeg5m5hUteTTsx6mSAk3QSTjqVQ0t/Kh5En68W4B/VnA8qiuLolzHqaTqid8sa4rvh/JVAU3zsOvMun5f3OZzdgf7VTXM/E3A+L25KrVTk9UcQnPHcvJvdAIlr0ZZTX2G+3Vs/XSEPQk4KRfLFSqLUm4uYvh9INki7SlB7lllYudSMQzV/5Ghg2K6UaxP9PDRRxOCVPWeYuR3H3tesdBciv+6+d3LxDdAWVbxZwphlGtS5N7NlIl2du888wQ5COaOwSAlXIQWdRvvVfvvQaTTY245jdsiToNX+KSf27bT+szpHyzOaIsT1kO4DAIdSlSxdSK600GsM5RY80iIF92mFc9EjK24WqFZ0PpaSRZ3L4aUvl+HbdS/K4+q1uTCTM="
     on_success: change
     on_failure: always
   irc:
