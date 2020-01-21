@@ -66,6 +66,7 @@ module EtdaUtilities
 
     def description
       return '' if current_access_level == ''
+
       self.class.partner_access_levels['access_level']["#{current_access_level}_attr"]['description_html']
     end
 
@@ -93,6 +94,7 @@ module EtdaUtilities
       rescue NoMethodError
         name = sym.to_s.sub('?', '')
         return false if ACCESS_LEVEL_KEYS.include?(name)
+
         raise
       end
   end
