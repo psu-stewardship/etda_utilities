@@ -13,8 +13,7 @@ before_install:
   - "gem --version"
   - "gem update --system"
   - "gem --version"
-  - "gem install bundler"
-  - "gem update bundler"
+  - 'gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"'
 script:
 - gem install bundler
 - gem install rspec
