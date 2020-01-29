@@ -2,7 +2,7 @@
 
 module EtdaUtilities
   file_path = File.join(File.dirname(__FILE__), 'access_levels_for_partners.yml')
-  CURRENT_PARTNER_ACCESS_LEVELS = YAML.safe_load(ERB.new(File.read(file_path.to_s)).result)[EtdaUtilities::Partner.current.id]
+  CURRENT_PARTNER_ACCESS_LEVELS = YAML.load_file(file_path.to_s)[EtdaUtilities::Partner.current.id]
 
   class AccessLevel
     attr_accessor :attributes
