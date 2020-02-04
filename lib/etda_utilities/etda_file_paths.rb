@@ -42,9 +42,13 @@ module EtdaUtilities
 
     def explore_download_file_path(file_id, access_level, filename)
       return nil if file_id.nil? || access_level.empty?
+
       return nil if access_level == 'restricted'
+
       return explore_open + detailed_file_path(file_id) + filename if access_level == 'open_access'
+
       return explore_psu_only + detailed_file_path(file_id) + filename if access_level == 'restricted_to_institution'
+
       nil
     end
   end

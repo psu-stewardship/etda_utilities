@@ -12,6 +12,7 @@ module EtdaUtilities
       unless VALID_IDS.include?(id)
         raise ArgumentError, "Unknown partner id #{id.inspect}"
       end
+
       @id = id
     end
 
