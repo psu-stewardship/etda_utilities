@@ -6,22 +6,12 @@ Common methods used by etda_workflow and etda_explore
 
 ## Installation
 
-This Gem isn't published, so you'll have to install it straight from GitHub, you will also need to have access to this project via ssh, or auth token to install
+This Gem isn't published, so you'll have to install it straight from GitHub.  It is a public repository, so no private key/token is necessary.
 
 To install via git, add this line to your applications's Gemfile:
 
 ```ruby
-gem 'etda_utilities', branch: 'master', git: "git@github.com:psu-stewardship/etda_utilities.git"
-```
-
-To install via a personal access token (for non-human, or shared access)
-* generate a personal access token and give it the "repo" scope (https://github.com/settings/tokens/new)
-* export that token as the `ETDA_UTILITIES_TOKEN` environment variable
-
-Then, add the following line to your application's Gemfile:
-
-```ruby
-gem 'etda_utilities', branch: 'master', git: "https://#{ENV['ETDA_UTILITIES_TOKEN']}@github.com/psu-stewardship/etda_utilities.git"
+gem 'etda_utilities', git: "https://github.com/psu-stewardship/etda_utilities.git", branch: 'master'
 ```
 
 And then execute:
