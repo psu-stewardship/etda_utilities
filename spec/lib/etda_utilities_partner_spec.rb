@@ -9,15 +9,9 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
 
       it 'sets current.id to graduate' do
         expect(described_class.current.id).to eql('graduate')
-        expect(described_class.current.id).not_to eql('honors')
-        expect(described_class.current.id).not_to eql('milsch')
-        expect(described_class.current.id).not_to eql('sset')
       end
       it 'responds to graduate?' do
         expect(described_class.current).to be_graduate
-        expect(described_class.current).not_to be_honors
-        expect(described_class.current).not_to be_milsch
-        expect(described_class.current).not_to be_sset
       end
     end
 
@@ -28,15 +22,9 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
 
       it 'sets current.id to honors' do
         expect(described_class.current.id).to eql('honors')
-        expect(described_class.current.id).not_to eql('graduate')
-        expect(described_class.current.id).not_to eql('milsch')
-        expect(described_class.current.id).not_to eql('sset')
       end
       it 'responds to honors?' do
         expect(described_class.current).to be_honors
-        expect(described_class.current).not_to be_graduate
-        expect(described_class.current).not_to be_milsch
-        expect(described_class.current).not_to be_sset
       end
     end
 
@@ -47,15 +35,9 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
 
       it 'sets current.id to milsch' do
         expect(described_class.current.id).to eql('milsch')
-        expect(described_class.current.id).not_to eql('graduate')
-        expect(described_class.current.id).not_to eql('honors')
-        expect(described_class.current.id).not_to eql('sset')
       end
       it 'responds to milsch?' do
         expect(described_class.current).to be_milsch
-        expect(described_class.current).not_to be_graduate
-        expect(described_class.current).not_to be_honors
-        expect(described_class.current).not_to be_sset
       end
     end
 
@@ -66,15 +48,9 @@ RSpec.describe EtdaUtilities::Partner, type: :model do
 
       it 'sets current.id to sset' do
         expect(described_class.current.id).to eql('sset')
-        expect(described_class.current.id).not_to eql('graduate')
-        expect(described_class.current.id).not_to eql('honors')
-        expect(described_class.current.id).not_to eql('milsch')
       end
       it 'responds to sset?' do
         expect(described_class.current).to be_sset
-        expect(described_class.current).not_to be_graduate
-        expect(described_class.current).not_to be_honors
-        expect(described_class.current).not_to be_milsch
       end
     end
 
