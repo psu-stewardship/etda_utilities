@@ -1,8 +1,8 @@
 language: ruby
 cache: bundler
 sudo: required
-#rvm:
-#- 2.4.3
+rvm:
+- 2.6.0
 jdk:
 - oraclejdk12
 env:
