@@ -2,19 +2,6 @@ inherit_from: .rubocop_todo.yml
 
 require: rubocop-rspec
 
-Rails:
-  Enabled: true
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
-  Exclude:
-    - 'db/**/*'
-    - 'script/**/*'
-    - 'vendor/**/*'
-    - 'config/deploy/**/*'
-    - 'features/**/*'
-    - 'etda_utilities.gemspec'
-
 Layout/LineLength:
   Enabled: false
 
