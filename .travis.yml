@@ -1,8 +1,8 @@
 language: ruby
 cache: bundler
 sudo: required
-rvm:
-- 2.6.0
+#rvm:
+#- 2.6.0
 jdk:
 - oraclejdk12
 env:
@@ -11,7 +11,7 @@ env:
   - JS=true
 before_install:
   - "gem --version"
-  - "gem update --system"
+  - "gem update --system 3.0.6"
   - "gem --version"
   - 'gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"'
 script:
