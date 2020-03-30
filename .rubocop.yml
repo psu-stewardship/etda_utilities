@@ -2,20 +2,7 @@ inherit_from: .rubocop_todo.yml
 
 require: rubocop-rspec
 
-Rails:
-  Enabled: true
-  Include:
-    - '**/Rakefile'
-    - '**/config.ru'
-  Exclude:
-    - 'db/**/*'
-    - 'script/**/*'
-    - 'vendor/**/*'
-    - 'config/deploy/**/*'
-    - 'features/**/*'
-    - 'etda_utilities.gemspec'
-
-Metrics/LineLength:
+Layout/LineLength:
   Enabled: false
 
 Metrics/AbcSize:
@@ -61,7 +48,7 @@ Layout/MultilineBlockLayout:
   Exclude:
 
 Layout/IndentationConsistency:
-  EnforcedStyle: rails
+  EnforcedStyle: indented_internal_methods
 
 Style/CollectionMethods:
   PreferredMethods:
@@ -92,6 +79,15 @@ Style/SingleLineBlockParams:
 Style/SignalException:
   Enabled: false
 
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
 Style/ClassVars:
   Exclude:
     - 'spec/support/authentication.rb'
@@ -100,12 +96,11 @@ Naming/VariableName:
   Exclude:
     - 'lib/share_notify/push_document.rb'
 
-Style/BracesAroundHashParameters:
-  Exclude:
-    - 'config/deploy.rb'
-    - 'spec/component/models/solr_data_import_service_spec.rb'
-
 Style/TernaryParentheses:
+  Exclude:
+    - 'lib/etda_utilities/etda_file_paths.rb'
+
+Style/FormatStringToken:
   Exclude:
     - 'lib/etda_utilities/etda_file_paths.rb'
     
@@ -123,17 +118,8 @@ Naming/AccessorMethodName:
 Naming/PredicateName:
   Exclude:
 
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Exclude:
-
-Rails/Date:
-  Enabled: false
-
-Rails/Output:
-  Exclude:
-
-Rails/TimeZone:
-  Enabled: false
 
 RSpec/ExampleLength:
   Enabled: false
