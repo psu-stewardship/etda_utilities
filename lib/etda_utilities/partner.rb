@@ -2,7 +2,7 @@
 
 module EtdaUtilities
   class Partner
-    VALID_IDS = %w[graduate honors milsch].freeze
+    VALID_IDS = %w[graduate honors milsch sset].freeze
 
     def self.current
       new(ENV.fetch('PARTNER'))
@@ -28,6 +28,10 @@ module EtdaUtilities
 
     def milsch?
       id == 'milsch'
+    end
+
+    def sset?
+      id == 'sset'
     end
   end
 end

@@ -41,6 +41,8 @@ module EtdaUtilities
           "honors"
         when 'milsch'
           "millennium-scholars"
+        when 'sset'
+          "sset"
         end
       end
   end
